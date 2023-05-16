@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
+      url: https://pypi.org/p/release-verchk-vijkan
     permissions:
       id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
 
@@ -63,7 +64,7 @@ jobs:
       - name: Publish distribution(package) to PyPI
         #if: startsWith(github.ref, 'refs/tags')
         uses: pypa/gh-action-pypi-publish@release/v1
-        #uses: pypa/gh-action-pypi-publish@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
+        #uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
         with:
           user: __token__
           password: ${{ secrets.PYPI_REL_TEST }}
